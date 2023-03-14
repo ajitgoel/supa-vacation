@@ -1,10 +1,7 @@
-// pages/homes/[id].js
-
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { PrismaClient } from '@prisma/client';
 import { useRouter } from 'next/router';
-// Instantiate Prisma Client
 const prisma = new PrismaClient();
 
 export async function getStaticPaths() {
@@ -42,10 +39,7 @@ export async function getStaticProps({ params }) {
 }
 
 const ListedHome = (home = null) => {
-    // Retrieve the Next.js router
     const router = useRouter();
-  
-    // Fallback version
     if (router.isFallback) {
   	    return 'Loading...'; 
     }

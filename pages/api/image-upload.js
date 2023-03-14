@@ -40,7 +40,7 @@ export default async function handler(req, res) {
                 contentType,
                 upsert: true,
             });
-            console.log("data: " + JSON.stringify(data));
+        //console.log("data: " + JSON.stringify(data));
         if (uploadError) {
             throw new Error('Unable to upload image to storage');
         }
