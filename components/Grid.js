@@ -1,8 +1,13 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 import Card from '@/components/Card';
 import { ExclamationIcon } from '@heroicons/react/outline';
 
+
 const Grid = ({ homes = [] }) => {
+  const [favorites, setFavorites] = useState([]);
   const isEmpty = homes.length === 0;
 
   const toggleFavorite = async id => {
@@ -17,7 +22,7 @@ const Grid = ({ homes = [] }) => {
   ) : (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {homes.map(home => (
-        <Card key={home.id} {...home} onClickFavorite={toggleFavorite} />
+        <Card key={home.id} {...home} onClickFavorite={toggleFavorite}/>
       ))}
     </div>
   );

@@ -1,0 +1,1 @@
+//retrieve all the favorite homes of the authenticated user, handle HTTP GET requests.
