@@ -33,6 +33,7 @@ export async function getServerSideProps(context) {
 //pass above data down to ListingForm component(image, title, description, etc.) to 
 //initialize editing form
 const Edit = (home = null) => {
+  const handleOnSubmit = data => axios.patch(`/api/homes/${home.id}`, data);
   return (
     <Layout>
       <div className="max-w-screen-sm mx-auto">
@@ -46,6 +47,7 @@ const Edit = (home = null) => {
               initialValues={home}
               buttonText="Update home"
               redirectPath={`/homes/${home.id}`}
+              onSubmit={handleOnSubmit}
             />
           ) : null}
         </div>
